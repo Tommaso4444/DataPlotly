@@ -1848,7 +1848,7 @@ class DataPlotlyPanelWidget(QgsPanelWidget, WIDGET):  # pylint: disable=too-many
        
       
         
-        # numero di colonne (nome variabile, coefficiente, standard error, t-value ,p-value)
+        # numero di colonne (nome variabile, coefficiente, standard error, t-value  ,p-value)
         regr_covariates_table_widget.setColumnCount(5)
     
         regr_covariates_table_widget.setHorizontalHeaderLabels(["Variable", "Coefficient", "Standard Error","T-value" ,"P-value"])
