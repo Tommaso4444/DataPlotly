@@ -751,7 +751,9 @@ class PlotFactory(QObject):  # pylint:disable=too-many-instance-attributes
 
         elif plot_type in ('scatter'):
             ptrace_copy=list(ptrace)
-            scatter_trace=ptrace_copy[0]
+            # print("ptrace");print(ptrace)
+            # print("ptrace[0]");print(ptrace[0])
+            scatter_trace=ptrace_copy[-1]
             x_data_single=scatter_trace['x']
             
             

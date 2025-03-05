@@ -1468,7 +1468,7 @@ class DataPlotlyPanelWidget(QgsPanelWidget, WIDGET):  # pylint: disable=too-many
         y_field= self.y_axis_title.text()
         
         x_fields=[x_field]
-        # print(x_fields);print(x_fields)
+        print("x_fields in create plot");print(x_fields)
 
         if self.subcombo.currentData() == 'single':
             
@@ -1476,13 +1476,14 @@ class DataPlotlyPanelWidget(QgsPanelWidget, WIDGET):  # pylint: disable=too-many
 
             # plot single plot, check the object dictionary length
             if len(self.plot_factories) <= 1:
-                # self.plot_path = plot_factory.build_figure()
+                self.plot_path = plot_factory.build_figure()
                 pl = []
 
                 for _, v in self.plot_factories.items():
                     pl.append(v.trace[0])
                     if modified_code==True:
                         if v.trace[0].__class__.__name__=="Scatter":
+                            # print("v.trace[0]['x'] in create_plot");print(v.trace[0]['x'])
                             self.x_data=v.trace[0]['x']
                             self.y_data=v.trace[0]['y']
                             self.is_data_suitable_for_regression = self.x_data!=() and self.y_data!=()
